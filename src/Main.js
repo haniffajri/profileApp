@@ -3,38 +3,52 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 class Main extends Component {
   render() {
+    const { userName, userGender, userAddress, userPhone } = this.props;
     return (
       <View style={Styles.classContainer}>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Name</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Name</Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigateToInputFormName()}
+            style={Styles.inputContainer}
+          >
+            <Text style={Styles.inputResult}>{userName}</Text>
           </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Gender</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Gender</Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigateToInputFormGender()}
+            style={Styles.inputContainer}
+          >
+            <Text style={Styles.inputResult}>{userGender}</Text>
           </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Phone</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Phone</Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigateToInputFormPhone()}
+            style={Styles.inputContainer}
+          >
+            <Text style={Styles.inputResult}>{userPhone}</Text>
           </TouchableOpacity>
         </View>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Address</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Address</Text>
+          <TouchableOpacity
+            style={Styles.inputContainer}
+            onPress={() => this.props.navigateToInputFormAddress()}
+            style={Styles.inputContainer}
+          >
+            <Text style={Styles.inputResult}>{userAddress}</Text>
           </TouchableOpacity>
         </View>
 
